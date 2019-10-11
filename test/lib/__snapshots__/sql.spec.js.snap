@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sql getSqlAst Returns the AST if query is valid 1`] = `
+Object {
+  "hasSemicolon": false,
+  "nodeType": "Main",
+  "value": Object {
+    "distinctOpt": null,
+    "from": Object {
+      "type": "TableReferences",
+      "value": Array [
+        Object {
+          "type": "TableReference",
+          "value": Object {
+            "alias": null,
+            "hasAs": null,
+            "indexHintOpt": null,
+            "partition": null,
+            "type": "TableFactor",
+            "value": Object {
+              "type": "Identifier",
+              "value": "someTable",
+            },
+          },
+        },
+      ],
+    },
+    "groupBy": null,
+    "having": null,
+    "highPriorityOpt": null,
+    "limit": null,
+    "maxStateMentTimeOpt": null,
+    "orderBy": null,
+    "partition": null,
+    "procedure": null,
+    "selectItems": Object {
+      "type": "SelectExpr",
+      "value": Array [
+        Object {
+          "type": "Identifier",
+          "value": "*",
+        },
+      ],
+    },
+    "sqlBigResultOpt": null,
+    "sqlBufferResultOpt": null,
+    "sqlCacheOpt": null,
+    "sqlCalcFoundRowsOpt": null,
+    "sqlSmallResultOpt": null,
+    "straightJoinOpt": null,
+    "type": "Select",
+    "updateLockMode": null,
+    "where": null,
+  },
+}
+`;
