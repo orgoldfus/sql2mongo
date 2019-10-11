@@ -21,7 +21,7 @@
     "url": "https://github.com/orgoldfus/sql2mongo/issues"
   },
   "homepage": "https://github.com/orgoldfus/sql2mongo#readme",
-  "dependencies": {
-    "js-sql-parser": "^1.2.0"
+  "devDependencies": {
+    "eslint": "^6.5.1"
   }
 }
