@@ -1,0 +1,24 @@
+{
+  "name": "sql2mongo",
+  "version": "0.1.0",
+  "description": "Parse SQL into MongoDB queries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orgoldfus/sql2mongo.git"
+  },
+  "keywords": [
+    "mongo",
+    "sql",
+    "mongodb"
+  ],
+  "author": "Or Goldfus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orgoldfus/sql2mongo/issues"
+  },
+  "homepage": "https://github.com/orgoldfus/sql2mongo#readme"
+}
