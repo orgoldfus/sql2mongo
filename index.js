@@ -1,11 +1,9 @@
-const sqlParser = require('js-sql-parser')
+const parseToMongoQuery = require("./lib/mongoParser");
 
 function parse (sqlQuery) {
-  const ast = sqlParser.parse(sqlQuery)
-  console.log(JSON.stringify(ast))
-  return {}
+  return parseToMongoQuery(sqlQuery);
 }
 
-parse("SELECT * from foo where name='Marco'")
-
-exports.parse = parse
+module.exports = {
+  parse
+};
