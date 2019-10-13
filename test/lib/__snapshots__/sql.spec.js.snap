@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sql getSqlAst Returns the AST if query is valid 1`] = `
+exports[`sql getSqlAst returns the AST if query is valid 1`] = `
 Object {
   "hasSemicolon": false,
   "nodeType": "Main",
