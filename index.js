@@ -1,8 +1,4 @@
-const { parseToMongoQuery, getMongoQueryObject } = require("./lib/mongoParser");
-
-function parse(sqlQuery) {
-  return parseToMongoQuery(sqlQuery);
-}
+const { getMongoQueryObject } = require("./lib/mongoParser");
 
 function getMongoQuery(whereClause) {
   const query = `SELECT * FROM table WHERE ${whereClause}`;
@@ -10,6 +6,5 @@ function getMongoQuery(whereClause) {
 }
 
 module.exports = {
-  parse,
   getMongoQuery
 };

@@ -9,12 +9,7 @@ const sql2mongo = require("./index");
 // );
 
 const result = sql2mongo.getMongoQuery(`
-  (age > 10 AND
-  city = NESTED("
-    postcode = 1234 AND 
-    population > 1000 AND 
-    country = NESTED('yearOfStart > 1984')
-  ")) OR
-  city.population > 9999999`);
+  NOT age > 4
+`);
 
 console.log(JSON.stringify(result, null, 2));
