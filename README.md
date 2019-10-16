@@ -1,6 +1,6 @@
 # sql2mongo [![Build Status][travis-image]][travis-url]
 
-Using SQL to query MongoDB
+Use SQL syntax to query MongoDB
 
 ## Installation
 ```

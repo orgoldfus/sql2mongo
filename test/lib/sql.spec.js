@@ -1,4 +1,4 @@
-const getSqlAst = require("../../lib/sql");
+const getSqlAst = require("../../src/sql");
 
 describe("sql", () => {
   describe("getSqlAst", () => {
