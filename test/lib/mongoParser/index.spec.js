@@ -1,4 +1,4 @@
-const { parseToMongoQuery } = require("../../../lib/mongoParser");
+const { parseToMongoQuery } = require("../../../src/mongoParser");
 
 describe("mongoParser", () => {
   describe("parseToMongoQuery", () => {

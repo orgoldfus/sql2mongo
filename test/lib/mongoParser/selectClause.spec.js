@@ -1,4 +1,4 @@
-const parseSelect = require("../../../lib/mongoParser/selectClause");
+const parseSelect = require("../../../src/mongoParser/selectClause");
 
 describe("parseSelect", () => {
   it("returns an empty object if Asterisk is passed", () => {

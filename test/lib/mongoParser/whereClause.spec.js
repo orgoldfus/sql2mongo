@@ -1,4 +1,4 @@
-const parseWhere = require("../../../lib/mongoParser/whereClause");
+const parseWhere = require("../../../src/mongoParser/whereClause");
 
 describe("parseWhere", () => {
   describe("type is Number", () => {
