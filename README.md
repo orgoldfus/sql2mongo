@@ -1,4 +1,4 @@
-# sql2mongo [![Build Status][travis-image]][travis-url]
+# sql2mongo [![Build Status][travis-image]][travis-url] ![npm](https://img.shields.io/npm/v/sql2mongo)
 
 Use SQL syntax to query MongoDB
 
