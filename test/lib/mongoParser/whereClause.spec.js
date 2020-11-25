@@ -274,7 +274,7 @@ describe("parseWhere", () => {
           type: "ComparisonBooleanPrimary",
           left: { type: "Identifier", value: "city" },
           operator: "<>",
-          right: { type: "String", value: ""Rio"" }
+          right: { type: "String", value: "'Rio'" }
         };
         const expected = { city: { $ne: "Rio" } };
 

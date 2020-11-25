@@ -139,6 +139,7 @@ function handleComparisonOperator(whereTree) {
   case "<=":
   case ">":
   case ">=":
+  case "<>":
   case "!=":
     return {
       [whereTree.left.value]: {
