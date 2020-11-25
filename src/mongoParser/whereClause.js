@@ -37,6 +37,8 @@ function parseWhere(whereTree) {
     return whereTree.value.replace(/['"]+/g, "");
   case "Number":
     return +whereTree.value;
+  case "Boolean":
+    return whereTree.value.toLowerCase() === "true";
   default:
     throw new Error(`Unsupported expression type: ${whereTree.type}`);
   }
@@ -137,6 +139,7 @@ function handleComparisonOperator(whereTree) {
   case "<=":
   case ">":
   case ">=":
+  case "<>":
   case "!=":
     return {
       [whereTree.left.value]: {
@@ -169,6 +172,7 @@ function getEqulityOperator(sqlOperator) {
     return "$lt";
   case "<=":
     return "$lte";
+  case "<>":
   case "!=":
     return "$ne";
   default:
