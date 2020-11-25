@@ -11,6 +11,16 @@ describe("parseWhere", () => {
     });
   });
 
+  describe("type is Boolean", () => {
+    it("should return a boolean", () => {
+      const whereTree = { type: "Boolean", value: "TRUE" };
+
+      const result = parseWhere(whereTree);
+
+      expect(result).toBe(true);
+    });
+  });
+
   describe("type is String", () => {
     it("should return a string", () => {
       const whereTree = { type: "String", value: "1337" };
@@ -258,6 +268,22 @@ describe("parseWhere", () => {
       });
     });
 
+    describe("operator is <>", () => {
+      it("should return a valid $ne object", () => {
+        const whereTree = {
+          type: "ComparisonBooleanPrimary",
+          left: { type: "Identifier", value: "city" },
+          operator: "<>",
+          right: { type: "String", value: ""Rio"" }
+        };
+        const expected = { city: { $ne: "Rio" } };
+
+        const result = parseWhere(whereTree);
+
+        expect(result).toEqual(expected);
+      });
+    });
+
     describe("operator is >", () => {
       it("should return a valid $gt object", () => {
         const whereTree = {
@@ -326,7 +352,7 @@ describe("parseWhere", () => {
       const whereTree = {
         type: "ComparisonBooleanPrimary",
         left: { type: "Identifier", value: "age" },
-        operator: "<>",
+        operator: "|",
         right: { type: "Number", value: "18" }
       };
 
