@@ -39,17 +39,25 @@ function parseWhere(whereTree) {
     return +whereTree.value;
   case "Boolean":
     return whereTree.value.toLowerCase() === "true";
+  case "Null":
+    return null;
   default:
     throw new Error(`Unsupported expression type: ${whereTree.type}`);
   }
 }
 
 function handleAndExpression(whereTree) {
-  return Object.assign(
-    {},
-    parseWhere(whereTree.left),
-    parseWhere(whereTree.right)
-  );
+  const left = parseWhere(whereTree.left);
+  const right = parseWhere(whereTree.right);
+
+  if (Object.keys(left)[0] === "$and") {
+    left["$and"].push(right);
+    return left;
+  }
+
+  return {
+    $and: [left, right]
+  };
 }
 
 function handleOrExpression(whereTree) {

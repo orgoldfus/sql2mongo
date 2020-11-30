@@ -133,7 +133,7 @@ describe("parseWhere", () => {
   });
 
   describe("type is AndExpression (AND)", () => {
-    it("should return a valid $or object", () => {
+    it("should return a valid $and object", () => {
       const whereTree = {
         type: "AndExpression",
         operator: "AND",
@@ -150,7 +150,7 @@ describe("parseWhere", () => {
           right: { type: "Number", value: "42" }
         }
       };
-      const expected = { city: "Rio", life: 42 };
+      const expected = { '$and': [ { city: 'Rio' }, { life: 42 } ] };
 
       const result = parseWhere(whereTree);
 
