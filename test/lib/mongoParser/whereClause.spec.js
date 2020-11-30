@@ -21,6 +21,16 @@ describe("parseWhere", () => {
     });
   });
 
+  describe("type is Null", () => {
+    it("should return null", () => {
+      const whereTree = { type: "Null", value: "null" };
+
+      const result = parseWhere(whereTree);
+
+      expect(result).toBe(null);
+    });
+  });
+
   describe("type is String", () => {
     it("should return a string", () => {
       const whereTree = { type: "String", value: "1337" };
