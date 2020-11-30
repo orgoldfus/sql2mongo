@@ -21,6 +21,16 @@ describe("parseWhere", () => {
     });
   });
 
+  describe("type is Null", () => {
+    it("should return null", () => {
+      const whereTree = { type: "Null", value: "null" };
+
+      const result = parseWhere(whereTree);
+
+      expect(result).toBe(null);
+    });
+  });
+
   describe("type is String", () => {
     it("should return a string", () => {
       const whereTree = { type: "String", value: "1337" };
@@ -133,7 +143,7 @@ describe("parseWhere", () => {
   });
 
   describe("type is AndExpression (AND)", () => {
-    it("should return a valid $or object", () => {
+    it("should return a valid $and object", () => {
       const whereTree = {
         type: "AndExpression",
         operator: "AND",
@@ -150,7 +160,7 @@ describe("parseWhere", () => {
           right: { type: "Number", value: "42" }
         }
       };
-      const expected = { city: "Rio", life: 42 };
+      const expected = { '$and': [ { city: 'Rio' }, { life: 42 } ] };
 
       const result = parseWhere(whereTree);
 
