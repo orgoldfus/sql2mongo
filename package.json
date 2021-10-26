@@ -1,6 +1,6 @@
 {
   "name": "sql2mongo",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Use SQL syntax to query MongoDB",
   "main": "index.js",
   "scripts": {
