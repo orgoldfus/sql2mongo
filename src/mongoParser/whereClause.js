@@ -93,7 +93,7 @@ function handleLikeOperator(whereTree) {
   return {
     [whereTree.left.value]: {
       // TODO: convert SQL to Mongo regex
-      $regex: parseWhere(whereTree.right)
+      $regex: parseRegex(whereTree.right.value)
     }
   };
 }
@@ -186,6 +186,14 @@ function getEqulityOperator(sqlOperator) {
   default:
     throw new Error(`Unsupported operator: ${sqlOperator}`);
   }
+}
+
+function parseRegex(regex) {
+  return new RegExp(
+    regex
+      .replace(/'/g, "")
+      .replace(/%/g, ".*")
+  ).toString();
 }
 
 module.exports = parseWhere;
